@@ -68,7 +68,7 @@ y los Métodos a  estudiar son:
 
 GIT
 
-1.En su repositorio de GitHub cree un archivo y haga un commit. Luego borre el archivo y haga otro commit. A continuación regrese al primer commit hecho haciendo un checkout del hash adecuado y verifique que en el directorio de trabajo reaparece el archivo borrado. Finalmente regrese a master y fíjese que el archivo borrado ya no aparece.
+1. En su repositorio de GitHub cree un archivo y haga un commit. Luego borre el archivo y haga otro commit. A continuación regrese al primer commit hecho haciendo un checkout del hash adecuado y verifique que en el directorio de trabajo reaparece el archivo borrado. Finalmente regrese a master y fíjese que el archivo borrado ya no aparece.
 
 Creamos un archivo de bash con `emacs ejemplo.sh`.
 
@@ -88,13 +88,13 @@ Para ver el archivo borrado hacemos `git log` y `git checkout`
 
 BASH
 
-1.Escriba un script de `bash` que reciba un número e imprima usando `awk` las líneas de un `csv` cuya primera columna sea igual al número entregado.
+1. Escriba un script de `bash` que reciba un número e imprima usando `awk` las líneas de un `csv` cuya primera columna sea igual al número entregado.
 
 ```
 #!/bin/bash
 awk -F"," '{if ($1=='$a') print $0}' $b #busca loa primera columna del archivo entregado
 ```
-2.Escriba un script de `bash` que imprima una matrix cuadrada de 5 X 5 con la secuencia de los primeros 25 enteros de izquierda a a derecha y de arriba a abajo.
+2. Escriba un script de `bash` que imprima una matrix cuadrada de 5 X 5 con la secuencia de los primeros 25 enteros de izquierda a a derecha y de arriba a abajo.
 
 ```
 #!/bin/bash
@@ -146,11 +146,11 @@ Caracteres especiales
 
 Expresiones regulares
 
-1.Construya una expresión regular que represente cuatro caracteres al inicio de una línea junto con un espacio a continuación.
+1. Construya una expresión regular que represente cuatro caracteres al inicio de una línea junto con un espacio a continuación.
 
 + Se realizo con el editor de texto de UBUNTU-gedit, `^....`
 
-2.Descargue con `curl` el código fuente de la página Pi - 10 Million Digits, límpielo de todo caracter diferente a los dígitos de pi y divídalo en líneas con 20 dígitos cada una quedando ellas en un archivo con nombre PIslices20.dat.
+2. Descargue con `curl` el código fuente de la página Pi - 10 Million Digits, límpielo de todo caracter diferente a los dígitos de pi y divídalo en líneas con 20 dígitos cada una quedando ellas en un archivo con nombre PIslices20.dat.
 
 ```
 curl http://pi.karmona.com/ #Descargamos el texto de la pagina
