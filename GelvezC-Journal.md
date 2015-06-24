@@ -195,3 +195,57 @@ gnuplot<< EOF #Abrimos GNUPLOT
 
 + Se puede ver como un arbol de tareas, si se modifica algo en una rama hay que compilar de nuevo el arbol completo. Por lo que `make` se encarga de definir prioridades y comprimir primero ciertos archivos de los cuales dependen los más grande
 
+###Clase 09-Jun-2015
+
+**HandsOn-4**
+
+Proyecto:
+
+###Clase 10-Jun-2015
+
+**HandsOn-5**
+
+El panel 5 x 5 se realizo de la siguiente manera:
+
+```
+%pylab inline
+from numpy import sin,pi,linspace
+from pylab import plot,show,subplot
+
+a = [1,3,5,3,7,21,11,13,7,37,31,59,61,67,19,23,41,43,47,3,5,7,23,29,31]
+b = [1,5,7,4,31,29,23,7,5,3,47,43,41,23,17,67,61,59,31,37,7,13,11,21,7]
+delta = pi/2
+t = linspace(-pi,pi,300)
+figure(figsize(20,20))
+
+for i in range(0,25):
+ x = sin(a[i] * t + delta)
+ y = sin(b[i] * t)
+ subplot(5,5,i+1)
+ plot(x,y)
+ plt.axis('off')
+
+show()
+```
+
+Lo que nos arroja una imagen como la siguiente:
+
+
+###Clase 12-Jun-2015
+
+**HandsOn-6**
+
+Conceptos aprendidos sobre error e incertidumbre:
+
++ 1
+
++ 2
+
++ 3
+
++ 4
+
+###Clase 16-Jun-2015
+
+**HandsOn-7**
+
