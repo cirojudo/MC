@@ -230,6 +230,7 @@ show()
 
 Lo que nos arroja una imagen como la siguiente:
 
+![](https://raw.githubusercontent.com/cirojudo/MC/master/Hands-On/5/lissajous.png)
 
 ###Clase 12-Jun-2015
 
