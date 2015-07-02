@@ -236,6 +236,8 @@ Lo que nos arroja una imagen como la siguiente:
 
 **HandsOn-6**
 
+2.En su bitácora escriba al menos dos párrafos de resumen de lo aprendido sobre error e incertidumbre.
+
 Conceptos aprendidos sobre error e incertidumbre:
 
 + Existen 4 tipos diferentes de error computacional, los cuales son:
@@ -251,6 +253,8 @@ Conceptos aprendidos sobre error e incertidumbre:
 ###Clase 16-Jun-2015
 
 **HandsOn-7**
+
+3.La tabla mostrada abajo tiene información sobre el campo magnético de un dipolo magnético a lo largo de su eje, haga un ajuste por mínimos cuadrados de acuerdo a un modelo teórico adecuado y calcule la magnitud del momento magnético del imán (en A m^2) y una tabla para B(x) con 100 renglones uniformemente espaciada entre el x=4.1cm y x=11.1cm. Haga una gráfica con los datos y el ajuste encontrado.
 
 Para realizar el ajuste para encontrar la magnitud del momento dipolar del dipolo se realizó el siguiente código:
 
@@ -278,5 +282,60 @@ plt.scatter(disCamp[:,0],disCamp[:,1])
 plt.xlabel("Distancia \n [cm]")
 plt.ylabel("Campo \n [uT]")
 ```
+
+Las gráfica y el resultado para el momento dipolar magnético, se puede ver en el [HandsOn-7](https://github.com/cirojudo/MC/blob/master/Hands-On/7/HandsOn-7.ipynb).
+
+**Proyecto Final**
+
+- Sin importar el tema del proyecto a realizar, es de gran ayuda el método para la interpolación, ya que al hacer un procedimiento experimental estamos tomando cierto numero de datos, pero sabemos que para algunos casos basta con tomar una muestra lo sificientemente grande para obtener buenas respuestas. Pero con la ayuda de la interpolación podemos generar aún mas datos que nos ayuden a disminuir el error por la pequeña cantidad de datos que se tomen. Es decir que se puede ahorrar un poco de tiempo tomando datos y que el computador lo haga por nosotros, mientras así se pueden estar realizando otro tipo de tareas de el mismo proyecto.
+
+###Clase 17-Jun-2015
+
+**HandsOn-8**
+
+1. (L1 Júpiter Io) Compare la solución exacta al primer punto de Lagrange del sistema Júpiter-Io con la aproximación para el caso M₂ << M₁. Hágalo utilizando root de scipy.optimize, ver sección 1.5.6 del Scipy Reference Guide.
+
+El código para comparar la solución fue el siguiente:
+
+```
+from scipy.optimize import  root
+
+r  = 422000
+m1 = 1.898E27
+m2 = 8.931E22
+
+def func(x):
+    return m2/(x**2) + (m1+m2)*(m1*r/(m1+m2) - x)/(r**3) - m1/((r-x)*(r-x))
+
+print(root(func,r/3))
+```
+
+Y el resultado es:
+
+```
+status: 1
+ success: True
+     qtf: array([-1066.])
+    nfev: 14
+       r: array([  2.35150308e+11])
+     fun: array([-2.])
+       x: array([ 10474.55011186])
+ message: 'The solution converged.'
+    fjac: array([[-1.]])
+```
+
+GitHub
+
+
+Calculadora: Se puede ver la implementación de una [calculadora](https://github.com/juannnesss/CAL/blob/master/calculadora.py) realizada en `python` por dos contribuidores en GitHub, esto es de grán importancia para el curso ya que se puede trabajar en un mismo proyecto con una o más personas. En este caso se realizó una calculadora que tiene las funciones más simples (suma,resta,multiplicación,división).
+
+
+###Clase 23-Jun-2015
+
+**HandsOn-10**
+
+Estime la duración del ciclo solar analizando con una DFT los datos monthrg.dat. La descripción del archivo está aquí. Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo.
+
+
 
 
