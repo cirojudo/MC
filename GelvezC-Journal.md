@@ -199,7 +199,7 @@ gnuplot<< EOF #Abrimos GNUPLOT
 
 **HandsOn-4**
 
-Proyecto:
+Proyecto:Es de grán ayuda `Make` ya que se puede compilar un proyecto completo, por lo que podemos usar distinta clase de lenguajes para nuestro proyecto final sin ningún problema y compilarlo todo.
 
 ###Clase 10-Jun-2015
 
@@ -336,6 +336,12 @@ Calculadora: Se puede ver la implementación de una [calculadora](https://github
 
 Estime la duración del ciclo solar analizando con una DFT los datos monthrg.dat. La descripción del archivo está aquí. Además utilice un filtro de altas frecuencias para obtener una gráfica similar a la mostrada abajo.
 
+La [Solución](https://github.com/cirojudo/MC/blob/master/Hands-On/10/HandsOn-10.ipynb) se puede ver en el cuaderno de pyton realizado.
 
+Se puede decir que el periodo del ciclo solar es de 12 años aproximadamente.
 
+###Clase 13 01-Jul-2015
 
+**HandsOn-13**
+
+Proyecto:
