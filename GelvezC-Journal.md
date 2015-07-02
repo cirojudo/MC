@@ -238,15 +238,45 @@ Lo que nos arroja una imagen como la siguiente:
 
 Conceptos aprendidos sobre error e incertidumbre:
 
-+ 1
++ Existen 4 tipos diferentes de error computacional, los cuales son:
+    
+    - Mala Teoría: Esto consiste en que los datos a analizar de por sí ya cuentan con un error y por ende al analizarlos tendremos un gran error en nuestros calculos, también pueden ser debidos a que el programa esté mal ejecutado o mal implementado.
+    
+    - Error aleatorio: Aunque no es muy común en el caso computacional, es necesario considerarlo ya que para simulaciones o programas que duren bastante tiempo ejecutandose, hay que tener la capacidad del PC y todo lo que esto conlleva, como la temperatura de operación y la fuente de energía.
+    
+    - Error de aproximación: Es el error mas común en estos casos, ya que el computador no es una herramienta que pueda realizar cálculos infinitos, por ende siempre se tiene un límite. Es decir que, por ejemplo al desarrollar una serie de con intervalo infinito, el pc aproximará este infinito hasta un numero en el cual el resultado tenga una buena precisión.
 
-+ 2
-
-+ 3
-
-+ 4
+    - Errores de redondeo: Un poco parecidos al anterior, al usar numeros infinitos como es el caso de Pi, o del numero de euler,hay que tener en cuenta que el programa no utilizará todas sus cifras decimales ya que este no tiene fin, por ende en cada iteración con este tipo de numeros hay que fijarse en cuantos numeros decimales se están utilizando.
 
 ###Clase 16-Jun-2015
 
 **HandsOn-7**
+
+Para realizar el ajuste para encontrar la magnitud del momento dipolar del dipolo se realizó el siguiente código:
+
+```
+%matplotlib inline
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+from scipy.optimize import curve_fit
+
+disCamp=np.transpose(np.array([[2.3 , 2.8 , 3.2 , 3.7 , 4.3],[34745,19689,12594,7982,5822]]))
+def Dipolo(z,mu):
+    return 2*mu*(10**(-1))*(1/(z**3))
+par,cov=curve_fit(Dipolo,disCamp[:,0],disCamp[:,1])
+sep=np.linspace(2.3,4.3,100)
+bsep=Dipolo(sep,*par)
+
+print("| x/cm  |  B/uT    |")
+for i in range(100):
+    print ("{:.2f}".format(sep[i])).rjust(1),"|",("{:.2f}".format(bsep[i])).rjust(1)
+
+print "Dipolo magnético en uAm^2", par*10**(-5)
+plt.plot(sep,Dipolo(sep,*par))
+plt.scatter(disCamp[:,0],disCamp[:,1])
+plt.xlabel("Distancia \n [cm]")
+plt.ylabel("Campo \n [uT]")
+```
+
 
